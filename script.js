@@ -41,6 +41,9 @@ function portimao(voiture, temps) {
 }
 
 function monza(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.484 * temps + 5.6), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
