@@ -48,5 +48,8 @@ function monza(voiture, temps) {
 }
 
 function sebring(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.424 * temps + 5.98), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
