@@ -14,7 +14,7 @@ function calculateTime() {
     };
 
     const result = circuits[circuit](voiture, temps);
-    document.getElementById('output').innerText = result;
+    document.getElementById('output').innerText = result + " L";
 }
 
 function spa(voiture, temps) {
