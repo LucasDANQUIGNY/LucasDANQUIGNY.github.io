@@ -13,8 +13,8 @@ function calculateTime() {
         "sebring": sebring
     };
 
-    const result = circuits[circuit](voiture, temps);
-    document.getElementById('output').innerText = result + " L";
+    const result = circuits[circuit](voiture, temps) + " L";
+    document.getElementById('output').innerText = result;
 }
 
 function spa(voiture, temps) {
