@@ -29,6 +29,9 @@ function bahrein(voiture, temps) {
 }
 
 function fuji(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.224 * temps + 4.16), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
