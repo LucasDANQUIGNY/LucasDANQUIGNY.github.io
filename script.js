@@ -12,7 +12,14 @@ function calculateTime() {
         "monza": monza,
         "sebring": sebring
     };
-    const result = circuits[circuit](voiture, temps) + " L";
+
+    const result = circuits[circuit](voiture, temps);
+    if (result != "Temps non disponible pour cette voiture") {
+        const result = circuits[circuit](voiture, temps) + " L";
+    }
+    else {
+        const result = circuits[circuit](voiture, temps)
+    }
     document.getElementById('output').innerText = result;
 }
 
@@ -38,6 +45,12 @@ function fuji(voiture, temps) {
 }
 
 function mans(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.483 * temps + 12.76), 0)).toString();
+    }
+    if (voiture == "LMP2") {
+        return (Math.round((1.692 * temps + 12.92), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
