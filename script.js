@@ -21,6 +21,9 @@ function spa(voiture, temps) {
     if (voiture == "ferrari") {
         return (Math.round((1.628 * temps + 7.2), 0)).toString();
     }
+    if (voiture == "LMP2") {
+        return (Math.round((1,547 * temps + 6.9), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
