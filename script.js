@@ -1,9 +1,9 @@
 function calculateTime() {
-    const circuit = document.getElementById('circuit').value;
-    const voiture = document.getElementById('voiture').value;
-    const temps = parseInt(document.getElementById('temps').value);
+    circuit = document.getElementById('circuit').value;
+    voiture = document.getElementById('voiture').value;
+    temps = parseInt(document.getElementById('temps').value);
 
-    const circuits = {
+    circuits = {
         "spa": spa,
         "bahrein": bahrein,
         "fuji": fuji,
@@ -13,12 +13,12 @@ function calculateTime() {
         "sebring": sebring
     };
 
-    const result = circuits[circuit](voiture, temps);
+    result = circuits[circuit](voiture, temps);
     if (result != "Temps non disponible pour cette voiture") {
-        const result = circuits[circuit](voiture, temps) + " L";
+        result = circuits[circuit](voiture, temps) + " L";
     }
     else {
-        const result = circuits[circuit](voiture, temps)
+        result = circuits[circuit](voiture, temps)
     }
     document.getElementById('output').innerText = result;
 }
