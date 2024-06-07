@@ -12,7 +12,6 @@ function calculateTime() {
         "monza": monza,
         "sebring": sebring
     };
-
     const result = circuits[circuit](voiture, temps) + " L";
     document.getElementById('output').innerText = result;
 }
@@ -22,7 +21,7 @@ function spa(voiture, temps) {
         return (Math.round((1.628 * temps + 7.2), 0)).toString();
     }
     if (voiture == "LMP2") {
-        return (Math.round((1,547 * temps + 6.9), 0)).toString();
+        return (Math.round((1.547 * temps + 6.9), 0)).toString();
     }
     return "Temps non disponible pour cette voiture";
 }
