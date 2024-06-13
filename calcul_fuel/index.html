@@ -9,46 +9,49 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Calculateur de Fuel</h1>
-        <form id="calculatorForm">
-            <label for="circuit">Circuit :</label>
-            <select id="circuit" name="circuit">
-                <option value="spa">Spa</option>
-                <option value="bahrein">Bahrein</option>
-                <option value="fuji">Fuji</option>
-                <option value="mans">Le Mans</option>
-                <option value="portimao">Portimao</option>
-                <option value="monza">Monza</option>
-                <option value="sebring">Sebring</option>
-            </select>
+    <div class="content" >    
+        <div class="container">
+            <h1>Calculateur de Fuel</h1>
+            <form id="calculatorForm">
+                <label for="circuit">Circuit :</label>
+                <select id="circuit" name="circuit">
+                    <option value="spa">Spa</option>
+                    <option value="bahrein">Bahrein</option>
+                    <option value="fuji">Fuji</option>
+                    <option value="mans">Le Mans</option>
+                    <option value="portimao">Portimao</option>
+                    <option value="monza">Monza</option>
+                    <option value="sebring">Sebring</option>
+                </select>
 
-            <label for="voiture">Voiture :</label>
-            <select id="voiture" name="voiture">
-                <option value="ferrari">Ferrari</option>
-                <option value="porsche">Porsche</option>
-                <option value="corvette">Corvette</option>
-                <option value="aston">Aston Martin</option>
-                <option value="LMP2">LMP2</option>
-            </select>
+                <label for="voiture">Voiture :</label>
+                <select id="voiture" name="voiture">
+                    <option value="ferrari">Ferrari</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="corvette">Corvette</option>
+                    <option value="aston">Aston Martin</option>
+                    <option value="LMP2">LMP2</option>
+                </select>
 
-            <label for="temps">Temps :</label>
-            <input type="number" id="temps" name="temps" required>
+                <label for="temps">Temps :</label>
+                <input type="number" id="temps" name="temps" required>
 
-            <button type="button" onclick="calculateTime()">Calculer</button>
-        </form>
+                <button class="button_calcul" type="button" onclick="calculateTime()">Calculer</button>
+            </form>
 
-        <div id="result">
-            <h2>Résultat :</h2>
-            <p id="output"></p>
+            <div id="result">
+                <h2>Résultat :</h2>
+                <p id="output"></p>
+            </div>
         </div>
+
+        <a href="C:\\Users\\lucasdanquigny\\Desktop\\Site Web Fuel\\index.html">
+            <button class="button">Home</button>
+        </a>
     </div>
 
-    <a href="https://lucasdanquigny.github.io">
-        <button class="button">Home</button>
-    </a>
-
     <script src="script.js"></script>
+
 </body>
 
 </html>
