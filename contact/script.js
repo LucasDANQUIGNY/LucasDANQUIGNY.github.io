@@ -1,3 +1,9 @@
+// Données de contacts simulées (remplacez avec vos données réelles)
+const contactsData = [
+    { "name": "lucas", "surname": "danquigny", "phone_number": "0766838515" }
+    // Ajoutez d'autres contacts au besoin
+];
+
 function toggleForm(action) {
     const formContainer = document.getElementById('form-container');
     formContainer.innerHTML = ''; // Clear previous content
@@ -25,25 +31,21 @@ function displayContacts() {
     const contactsContainer = document.getElementById('contacts-container');
     contactsContainer.innerHTML = ''; // Clear previous content
 
-    fetch('contact.json')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(contact => {
-                const contactItem = document.createElement('div');
-                contactItem.classList.add('contact-item');
-                contactItem.innerHTML = `
-                    <p>Name: ${contact.name}</p>
-                    <p>Surname: ${contact.surname}</p>
-                    <p>Phone Number: ${contact.phone_number}</p>
-                    <div class="actions">
-                        <button onclick="toggleForm('delete')">Delete</button>
-                        <button onclick="toggleForm('modify')">Modify</button>
-                        <button onclick="callContact('${contact.name} ${contact.surname}')">Call</button>
-                    </div>
-                `;
-                contactsContainer.appendChild(contactItem);
-            });
-        });
+    contactsData.forEach(contact => {
+        const contactItem = document.createElement('div');
+        contactItem.classList.add('contact-item');
+        contactItem.innerHTML = `
+            <p>Name: ${contact.name}</p>
+            <p>Surname: ${contact.surname}</p>
+            <p>Phone Number: ${contact.phone_number}</p>
+            <div class="actions">
+                <button onclick="toggleForm('delete')">Delete</button>
+                <button onclick="toggleForm('modify')">Modify</button>
+                <button onclick="callContact('${contact.name} ${contact.surname}')">Call</button>
+            </div>
+        `;
+        contactsContainer.appendChild(contactItem);
+    });
 }
 
 function addContact() {
@@ -51,57 +53,39 @@ function addContact() {
     const surname = document.getElementById('surname').value;
     const phone_number = document.getElementById('phone_number').value;
 
-    fetch('add', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, surname, phone_number }),
-    })
-        .then(response => response.json())
-        .then(() => {
-            displayContacts();
-            document.getElementById('form-container').style.display = 'none';
-        });
+    // Simuler l'ajout en ajoutant à la liste de contacts (en mémoire)
+    contactsData.push({ name, surname, phone_number });
+
+    displayContacts();
+    document.getElementById('form-container').style.display = 'none';
 }
 
 function deleteContact() {
     const full_name = document.getElementById('full_name').value;
 
-    fetch('delete', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ full_name }),
-    })
-        .then(response => response.json())
-        .then(() => {
-            displayContacts();
-            document.getElementById('form-container').style.display = 'none';
-        });
+    // Simuler la suppression en retirant de la liste de contacts (en mémoire)
+    // Vous devez implémenter la logique réelle pour supprimer un contact
+    // depuis une source de données persistante.
+    console.log(`Deleting contact: ${full_name}`);
+
+    displayContacts();
+    document.getElementById('form-container').style.display = 'none';
 }
 
 function modifyContact() {
     const full_name = document.getElementById('full_name').value;
 
-    fetch('modify', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ full_name }),
-    })
-        .then(response => response.json())
-        .then(() => {
-            displayContacts();
-            document.getElementById('form-container').style.display = 'none';
-        });
+    // Simuler la modification en mettant à jour la liste de contacts (en mémoire)
+    // Vous devez implémenter la logique réelle pour modifier un contact
+    // depuis une source de données persistante.
+    console.log(`Modifying contact: ${full_name}`);
+
+    displayContacts();
+    document.getElementById('form-container').style.display = 'none';
 }
 
 function callContact(full_name) {
-    alert(`Calling ${full_name}...`); // You can customize this behavior further
-}
+    alert(`Calling ${full_name}...`); // Simuler un appel réel ici
 
-// Initially display contacts when page loads
-displayContacts();
+    // Vous pouvez étendre cette fonction pour une intégration réelle avec des appels téléphoniques.
+}
