@@ -5,7 +5,7 @@
     cursor: pointer;
     font-size: 16px;
     border: none;
-    transform: scale(1.5);
+    scale: 200%;
 }
 
 .buttons:hover {
