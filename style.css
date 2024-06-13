@@ -1,0 +1,12 @@
+.buttons {
+    background-color: aqua;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.buttons:hover {
+    transform: scale(1.5);
+}
