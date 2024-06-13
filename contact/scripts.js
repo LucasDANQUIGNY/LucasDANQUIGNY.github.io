@@ -1,5 +1,5 @@
 // Données de contacts simulées (remplacez avec vos données réelles)
-const contactsData = [
+let contactsData = [
     { "name": "lucas", "surname": "danquigny", "phone_number": "0766838515" }
     // Ajoutez d'autres contacts au besoin
 ];
@@ -39,7 +39,7 @@ function displayContacts() {
             <p>Surname: ${contact.surname}</p>
             <p>Phone Number: ${contact.phone_number}</p>
             <div class="actions">
-                <button onclick="toggleForm('delete')">Delete</button>
+                <button onclick="deleteContact('${contact.name} ${contact.surname}')">Delete</button>
                 <button onclick="toggleForm('modify')">Modify</button>
                 <button onclick="callContact('${contact.name} ${contact.surname}')">Call</button>
             </div>
@@ -53,39 +53,31 @@ function addContact() {
     const surname = document.getElementById('surname').value;
     const phone_number = document.getElementById('phone_number').value;
 
-    // Simuler l'ajout en ajoutant à la liste de contacts (en mémoire)
     contactsData.push({ name, surname, phone_number });
 
     displayContacts();
     document.getElementById('form-container').style.display = 'none';
 }
 
-function deleteContact() {
-    const full_name = document.getElementById('full_name').value;
+function deleteContact(full_name) {
+    const [name, surname] = full_name.split(' ');
 
-    // Simuler la suppression en retirant de la liste de contacts (en mémoire)
-    // Vous devez implémenter la logique réelle pour supprimer un contact
-    // depuis une source de données persistante.
-    console.log(`Deleting contact: ${full_name}`);
+    contactsData = contactsData.filter(contact => !(contact.name === name && contact.surname === surname));
 
     displayContacts();
-    document.getElementById('form-container').style.display = 'none';
 }
 
 function modifyContact() {
     const full_name = document.getElementById('full_name').value;
 
-    // Simuler la modification en mettant à jour la liste de contacts (en mémoire)
-    // Vous devez implémenter la logique réelle pour modifier un contact
-    // depuis une source de données persistante.
-    console.log(`Modifying contact: ${full_name}`);
+    // Implémentez la logique de modification ici (non implémentée dans cet exemple)
+    alert(`Modify ${full_name}`);
 
-    displayContacts();
     document.getElementById('form-container').style.display = 'none';
 }
 
 function callContact(full_name) {
     alert(`Calling ${full_name}...`); // Simuler un appel réel ici
 
-    // Vous pouvez étendre cette fonction pour une intégration réelle avec des appels téléphoniques.
+    // Implémentez l'intégration avec les appels téléphoniques si nécessaire
 }
