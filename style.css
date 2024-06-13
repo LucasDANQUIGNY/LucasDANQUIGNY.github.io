@@ -5,11 +5,11 @@
     cursor: pointer;
     font-size: 16px;
     border: none;
+    transform: scale(1.5);
 }
 
 .buttons:hover {
-    background-color: #3a8dd1;
-    transform: scale(1.5);
+    background-color: #007bff;
 }
 
 body {
