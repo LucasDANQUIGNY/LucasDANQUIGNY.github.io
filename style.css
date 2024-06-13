@@ -1,5 +1,5 @@
 .buttons {
-    background-color: aqua;
+    background-color: #3ab1d1;
     color: black;
     border-radius: 5px;
     cursor: pointer;
@@ -8,5 +8,6 @@
 }
 
 .buttons:hover {
+    background-color: #3a8dd1;
     transform: scale(1.5);
 }
