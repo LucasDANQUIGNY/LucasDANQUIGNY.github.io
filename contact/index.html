@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Management</h1>
+
+        <div class="actions">
+            <button onclick="toggleForm('add')">Add Contact</button>
+            <button onclick="toggleForm('delete')">Delete Contact</button>
+            <button onclick="toggleForm('modify')">Modify Contact</button>
+            <button onclick="toggleForm('call')">Call Contact</button>
+            <button onclick="displayContacts()">Show Contacts</button>
+        </div>
+
+        <div id="form-container" class="form-container">
+            <!-- Form will be dynamically filled here -->
+        </div>
+
+        <div id="contacts-container" class="contacts-container">
+            <!-- Contacts will be dynamically filled here -->
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
