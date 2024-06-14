@@ -34,6 +34,9 @@ function spa(voiture, temps) {
 }
 
 function bahrein(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.384 * temps + 5.74), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
