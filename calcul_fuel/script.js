@@ -58,6 +58,9 @@ function mans(voiture, temps) {
 }
 
 function portimao(voiture, temps) {
+    if (voiture == "ferrari") {
+        return (Math.round((1.375 * temps + 4.98), 0)).toString();
+    }
     return "Temps non disponible pour cette voiture";
 }
 
