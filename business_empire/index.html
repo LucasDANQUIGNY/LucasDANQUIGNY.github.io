@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Empire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+            <h1>Business Empire</h1>
+            <form id="Form">
+
+                <label for="money">Money :</label>
+                <input type="text" id="money" name="money" required>
+
+                <button class="button_calcul" type="button" onclick="calculateConstruction()">Calculer</button>
+            </form>
+
+            <div id="result">
+                <h2>Résultat :</h2>
+                <p id="quantity"></p>
+                <p id="materials"></p>
+            </div>
+        </div>
+
+        <a href="https://lucasdanquigny.github.io">
+            <button class="button">Home</button>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
