@@ -5,11 +5,13 @@
     cursor: pointer;
     font-size: 16px;
     border: none;
-    scale: 200%;
+    scale: 150%;
+    margin: auto;
 }
 
 .buttons:hover {
     background-color: #0056b3;
+    scale: 175%;
 }
 
 body {
