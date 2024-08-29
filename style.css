@@ -1,17 +1,17 @@
-.buttons {
+.button {
     background-color: #007BFF;
     color: white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     border: none;
-    scale: 150%;
-    margin: 4.5cm;
+    transform: scale(1.5); 
+    margin: 30px;
 }
 
-.buttons:hover {
+.button:hover {
     background-color: #0056b3;
-    scale: 175%;
+    transform: scale(1.75);
 }
 
 body {
@@ -19,4 +19,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
